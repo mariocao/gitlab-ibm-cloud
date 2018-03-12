@@ -2,9 +2,9 @@
 
 * Scripts under the folder "kubernetes" were used in order to use NFS and avoid persistence related problems within the cluster in the IBM Cloud.
 * In order to better track the Gitlab deployment, the yaml file have been organized as follows:
-  * <service>-volume
-  * <service>-claim
-  * <service>
+  * `<service>`-volume
+  * `<service>`-claim
+  * `<service>`
 
 These yaml files have been applied by using the command:
 
