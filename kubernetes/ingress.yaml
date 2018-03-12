@@ -1,0 +1,22 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gitlab
+  annotations:
+   ingress.bluemix.net/redirect-to-https: "True"
+   ingress.bluemix.net/client-max-body-size: "size=100m"
+spec:
+  tls:
+  - hosts:
+    - gitlab.mycluster.uk-south.containers.mybluemix.net
+    secretName: mycluster
+  rules:
+  - host: gitlab.mycluster.uk-south.containers.mybluemix.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gitlab
+          servicePort: 80
+      

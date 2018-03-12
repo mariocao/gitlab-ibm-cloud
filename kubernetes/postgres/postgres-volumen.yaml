@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+ name: gitlab-postgres-pv
+ labels:
+  app: gitlab
+  tier: postgres
+spec:
+ capacity:
+   storage: "20Gi"
+ accessModes:
+   - ReadWriteMany
+ nfs:
+   server: "fsf-<CHANGE_ME>-fz.service.softlayer.com"
+   path: "/<CHANGE_ME>/data01"

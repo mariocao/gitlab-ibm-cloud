@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitlab-data-claim
+  annotations:
+    volume.beta.kubernetes.io/storage-class: ""
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: "20Gi"
+  selector:
+    matchLabels:
+      app: gitlab
+      tier: postgres
